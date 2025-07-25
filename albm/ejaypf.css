@@ -1,0 +1,140 @@
+body{
+background-color: black;
+}
+
+.menubar {
+display: inline-block;
+width: 1480px;
+height: 100px;
+background-color: #1e3a8a;
+position: relative;
+}
+
+.menubar > button {
+background-color: transparent;
+border: none;
+position: absolute;
+top: 30px;
+left: 15px;
+cursor: pointer;
+margin-left: 5px;
+padding-left: 5px;
+}
+
+.menubar > button img {
+    transition: transform 0.3s ease-in-out;
+}
+.menubar > button:hover img {
+    transform: scale(2.0);
+}
+
+#pop-up {
+display: none;
+position: fixed;
+bottom: 250px;
+left: 500px;
+width: 500px;
+height: 400px;
+background-color: #d1b345;
+border: none;
+border-radius: 10px;
+padding: 20px;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+z-index: 1000;
+opacity: 60%;
+transform: scale(0.8);
+transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.linkboxS {
+display: flex;
+width: 500px;
+height: 100px;
+position: relative;
+background-color: #000000;
+border-radius: 5px;
+gap: 1px;
+justify-content: center;
+align-items: center;
+}
+
+.linkboxS > div {
+display: flex;
+flex-grow: 1;
+width: 50px;
+height: 75px;
+position:relative;
+background-color: #d1b345;
+border-radius: 5px;
+justify-content: center;
+align-items: center;
+margin: 2px;
+}
+
+.linkboxS > div:hover {
+flex-grow: 5;
+transition: 0.2s ease-in-out;
+background-color: #1e3a8a;
+}
+
+.linkboxS > div button {
+border: none;
+background-color: transparent;
+cursor: pointer;
+transition: transform 0.3s ease-in-out;
+}
+
+.linkboxS > div button:hover img {
+transform: scale(1.2);
+}
+
+.linkboxS > div img {
+ transition: transform 0.2s ease-in-out;
+}
+
+#pop-up.active {
+display:block;
+opacity: 1;
+transform: scale(1)
+}
+
+@media (max-width: 600px) {
+  .menubar {
+    width: 100vw;
+    height: 60px;
+  }
+
+  .menubar > button {
+    top: 10px;
+    left: 10px;
+  }
+
+  #pop-up {
+    width: 90vw;
+    height: auto;
+    min-height: 200px;
+    padding: 10px;
+    left: 50%;
+    top: 50%;
+    bottom: auto;
+    transform: translate(-50%, -50%) scale(0.95);
+  }
+
+  .linkboxS {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+  }
+
+  .linkboxS > div {
+    width: 80vw;
+    height: 50px;
+    margin: 4px 0;
+  }
+
+  .linkboxS > div button img {
+    width: 32px;
+    height: 32px;
+  }
+}
